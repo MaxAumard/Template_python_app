@@ -1,0 +1,28 @@
+[tool.pdm]
+[tool.pdm.dev-dependencies]
+dev = [
+    "pytest>=7.2.1",
+    "coverage>=7.1.0",
+    "selenium>=4.8.0",
+]
+
+
+[project]
+name = "Template_python_application"
+version = "0.1"
+description = "template application for python"
+authors = [
+    {name = "Max Aumard", email = "max.aumard@uha.fr"},
+]
+dependencies = [
+    "flask>=2.2.2",
+    "flask-sqlalchemy>=3.0.2",
+    "python-dotenv>=0.21.1",
+]
+requires-python = ">=3.11"
+license = {text = "MIT"}
+
+[tool.pdm.scripts]
+start.cmd = "flask --app src.template_python_application.app run -p 8080"
+test = {shell = "coverage run -m pytest && coverage report -m && coverage html"}
+
